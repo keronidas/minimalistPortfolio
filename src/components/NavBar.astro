@@ -1,0 +1,37 @@
+---
+const ruta = [
+    { text: "Home", href: "/" },
+    { text: "Sobre mi", href: "/sobreMi" },
+    { text: "Proyectos", href: "/proyectos" },
+    { text: "Servicios", href: "/servicios" },
+    { text: "Contacto", href: "/contacto" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="flex text-white justify-around p-1 pt-6 items-center fixed w-full">
+    <img src="./" alt="imagen" />
+    <ul class="flex flex-row gap-8">
+        {
+            ruta.map(({ href, text }) => (
+                <li class="hover:text-[#4FC3F7] p-1">
+                    <a href={href}>{text}</a>
+                    {currentPath === href ? (
+                        <div
+                            transition:name="menu-line"
+                            class="border-b-2 border-blue-500 "
+                        />
+                    ) : (
+                        <div class="border-b-2 border-transparent" />
+                    )}
+                </li>
+            ))
+        }
+    </ul>
+
+    <button
+        class="font-bold p-2 px-4 border border-[#4FC3F7] rounded hover:bg-[#4FC3F7] hover:text-black"
+        >Contacto</button
+    >
+</nav>
