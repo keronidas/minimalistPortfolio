@@ -1,10 +1,19 @@
 ---
-const { texto, color } = Astro.params;
+const { texto, titulo, img } = Astro.props;
 
 interface CardProps {
     texto: string;
-    color: string;
+    titulo: string;
+    img: string;
 }
 ---
 
-
+<div
+    class="flex flex-col text-start border border-white rounded-lg text-white w-80 h-96 hover:scale-110 transition-transform duration-500 ease-in-out"
+>
+    <div class="flex flex-start p-6">
+        <img src={img} alt="no cargo" class="w-20 h-auto" />
+    </div>
+    <p class="text-md font-bold px-4">{titulo}</p>
+    <p class="text-md p-2 px-4">{texto}</p>
+</div>

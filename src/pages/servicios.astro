@@ -1,12 +1,25 @@
 ---
+import Card from "../components/Card.astro";
 import Theme from "../themes/Theme.astro";
 ---
 
 <Theme>
-    <div class="grid grid-cols-3 gap-6 w-full text-center">
-
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
+    <div class="grid grid-cols-3 w-full text-center justify-items-center w-3/5">
+        <Card
+            titulo="Desarrollo Web"
+            texto="Creamos sitios web únicos, modernos y optimizados para SEO, adaptados para destacar en cualquier dispositivo y ofrecer una experiencia de usuario excepcional."
+            img="icons/www.png"
+        />
+        <Card
+            titulo="Desarrollo Fullstack"
+            texto="Ofrecemos desarrollo completo para aplicaciones web y de escritorio, con una arquitectura escalable, segura y centrada en el rendimiento."
+            img="icons/ordenador.png"
+        />
+        <Card
+            titulo="Modelado 3D"
+            texto="Integramos modelado 3D interactivo en tus aplicaciones para mejorar la presentación visual y proporcionar una experiencia inmersiva para tus usuarios."
+            img="icons/modelado-3d.png"
+        />
     </div>
+    
 </Theme>
